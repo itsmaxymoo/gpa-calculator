@@ -26,7 +26,7 @@
 
 <div class="field">
 	<!-- svelte-ignore a11y-label-has-associated-control -->
-	<label class="label">{title}</label>
+	<label hidden="{title == ""}" class="label">{title}</label>
 	<div class="control">
 		<input class="input" type="text" min=0 placeholder="{ placeholder ? placeholder : title}" bind:value={text} on:input={validate}>
 	</div>

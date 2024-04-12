@@ -1,6 +1,7 @@
 <script>
 	
 	import AppContainer from "./lib/AppContainer.svelte";
+    import ClassGrades from "./lib/ClassGrades.svelte";
     import Footer from "./lib/Footer.svelte";
     import NumericInput from "./lib/NumericInput.svelte";
     import ResultsPane from "./lib/ResultsPane.svelte";
@@ -61,8 +62,8 @@
 				<NumericInput title="Desired GPA" bind:text={desiredGPA} on:validInput={onValidInput} />
 
 				<hr />
-
-				<button class="button is-fullwidth" on:click={clearAll}>Clear All</button>
+				
+				<ClassGrades/>
 			</div>
 			<div class="column is-2">
 				<UiMainArrow/>
