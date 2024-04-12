@@ -9,5 +9,5 @@
 {#if valid}
 	//
 {:else}
-	<p class="has-text-centered is-italic">waiting for valid input...</p>
+	<p class="has-text-centered is-italic pt-4">waiting for valid input...</p>
 {/if}
