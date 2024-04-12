@@ -1,6 +1,7 @@
 <script>
 	
 	import AppContainer from "./lib/AppContainer.svelte";
+    import Footer from "./lib/Footer.svelte";
     import NumericInput from "./lib/NumericInput.svelte";
     import ResultsPane from "./lib/ResultsPane.svelte";
     import Section from "./lib/Section.svelte";
@@ -71,4 +72,6 @@
 			</div>
 		</div>
 	</Section>
+
+	<Footer />
 </AppContainer>

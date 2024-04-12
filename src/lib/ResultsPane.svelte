@@ -1,6 +1,7 @@
 <script>
     import Section from "./Section.svelte";
     import { gpaToNeededLetterGrade } from "./calc";
+    import { gradeRef } from "./const";
 
 	export let valid = false;
 	export let reqGPA = 0;
@@ -27,7 +28,7 @@
 				{gpaToNeededLetterGrade(reqGPA)}
 			</span>
 			term-average letter grade according to
-			<a href="https://registrar.psu.edu/grades/grade-point-average.cfm" target="_blank">
+			<a href="{gradeRef}" target="_blank">
 				this.
 			</a>
 		</p>
