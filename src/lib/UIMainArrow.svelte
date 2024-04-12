@@ -1,4 +1,4 @@
-<div class="has-text-centered">
+<div class="has-text-centered is-size-1">
 	<div class="is-hidden-mobile">
 		<span class="icon">
 			<i class="las la-arrow-circle-right"></i>

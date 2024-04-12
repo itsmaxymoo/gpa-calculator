@@ -12,8 +12,8 @@
 	<Title />
 
 	<Section>
-		<div class="columns">
-			<div class="column">
+		<div class="columns is-vcentered">
+			<div class="column is-5">
 				<h2>To begin, enter the following:</h2>
 	
 				<NumericInput title="Existing completed credits"
@@ -24,10 +24,10 @@
 					help="The number of credits you are enrolled in this semester (or term/whatever)." />
 				<NumericInput title="Desired GPA" />
 			</div>
-			<div class="column">
+			<div class="column is-2">
 				<UiMainArrow/>
 			</div>
-			<div class="column">
+			<div class="column is-5">
 				//
 			</div>
 		</div>
