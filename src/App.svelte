@@ -6,6 +6,7 @@
     import Section from "./lib/Section.svelte";
 	import Title from "./lib/Title.svelte";
     import UiMainArrow from "./lib/UIMainArrow.svelte";
+    import { calcNeededGPA } from "./lib/calc";
 
 	let existingCredits = "";
 	let existingGPA = "";
@@ -16,8 +17,14 @@
 	let calculationValid = false;
 
 	function onValidInput(){
-		if(("" + existingCredits + existingGPA + currentCredits + desiredGPA).length >= 4){
-			// valid input!
+		if((existingCredits.length * existingGPA.length * currentCredits.length * desiredGPA.length) > 0){
+			neededGPA = calcNeededGPA(
+				parseFloat(existingCredits),
+				parseFloat(existingGPA),
+				parseFloat(currentCredits),
+				parseFloat(desiredGPA)
+			);
+
 			calculationValid = true;
 		}
 		else{
@@ -42,7 +49,7 @@
 	<Section>
 		<div class="columns">
 			<div class="column is-5">
-				<h2>To begin, enter the following:</h2>
+				<h2 class="has-text-weight-normal">To begin, enter the following:</h2>
 	
 				<NumericInput title="Existing completed credits" bind:text={existingCredits} on:validInput={onValidInput}
 					help="This is the number of credits completed BEFORE this current term."/>
