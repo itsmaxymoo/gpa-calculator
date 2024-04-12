@@ -14,10 +14,7 @@
 
 		var value = parseFloat(text);
 
-		if(value >= 0 && value != undefined){
-			//
-		}
-		else{
+		if(!(value >= 0 && value != undefined)){
 			text = "";
 		}
 
