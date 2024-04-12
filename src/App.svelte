@@ -2,6 +2,7 @@
 	
 	import AppContainer from "./lib/AppContainer.svelte";
     import NumericInput from "./lib/NumericInput.svelte";
+    import ResultsPane from "./lib/ResultsPane.svelte";
     import Section from "./lib/Section.svelte";
 	import Title from "./lib/Title.svelte";
     import UiMainArrow from "./lib/UIMainArrow.svelte";
@@ -12,7 +13,7 @@
 	<Title />
 
 	<Section>
-		<div class="columns is-vcentered">
+		<div class="columns">
 			<div class="column is-5">
 				<h2>To begin, enter the following:</h2>
 	
@@ -28,7 +29,7 @@
 				<UiMainArrow/>
 			</div>
 			<div class="column is-5">
-				//
+				<ResultsPane/>
 			</div>
 		</div>
 	</Section>
