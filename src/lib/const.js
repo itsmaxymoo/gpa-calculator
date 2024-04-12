@@ -1,0 +1,1 @@
+export let appName = "Max's GPA Calculator";

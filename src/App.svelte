@@ -1,47 +1,35 @@
 <script>
-  import svelteLogo from './assets/svelte.svg'
-  import viteLogo from '/vite.svg'
-  import Counter from './lib/Counter.svelte'
+	
+	import AppContainer from "./lib/AppContainer.svelte";
+    import NumericInput from "./lib/NumericInput.svelte";
+    import Section from "./lib/Section.svelte";
+	import Title from "./lib/Title.svelte";
+    import UiMainArrow from "./lib/UIMainArrow.svelte";
+
 </script>
 
-<main>
-  <div>
-    <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-      <img src={viteLogo} class="logo" alt="Vite Logo" />
-    </a>
-    <a href="https://svelte.dev" target="_blank" rel="noreferrer">
-      <img src={svelteLogo} class="logo svelte" alt="Svelte Logo" />
-    </a>
-  </div>
-  <h1>Vite + Svelte</h1>
+<AppContainer>
+	<Title />
 
-  <div class="card">
-    <Counter />
-  </div>
-
-  <p>
-    Check out <a href="https://github.com/sveltejs/kit#readme" target="_blank" rel="noreferrer">SvelteKit</a>, the official Svelte app framework powered by Vite!
-  </p>
-
-  <p class="read-the-docs">
-    Click on the Vite and Svelte logos to learn more
-  </p>
-</main>
-
-<style>
-  .logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
-  }
-  .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-  }
-  .logo.svelte:hover {
-    filter: drop-shadow(0 0 2em #ff3e00aa);
-  }
-  .read-the-docs {
-    color: #888;
-  }
-</style>
+	<Section>
+		<div class="columns">
+			<div class="column">
+				<h2>To begin, enter the following:</h2>
+	
+				<NumericInput title="Existing completed credits"
+					help="This is the number of credits completed BEFORE this current term."/>
+				<NumericInput title="Existing finalized GPA"
+					help="This is your cumulative GPA up to and including the PREVIOUS term."/>
+				<NumericInput title="Credits this period"
+					help="The number of credits you are enrolled in this semester (or term/whatever)." />
+				<NumericInput title="Desired GPA" />
+			</div>
+			<div class="column">
+				<UiMainArrow/>
+			</div>
+			<div class="column">
+				//
+			</div>
+		</div>
+	</Section>
+</AppContainer>
