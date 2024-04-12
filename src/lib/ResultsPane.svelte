@@ -2,6 +2,7 @@
     import Section from "./Section.svelte";
 
 	export let valid = false;
+	export let reqGPA = 0;
 </script>
 
 <h2>Results:</h2>

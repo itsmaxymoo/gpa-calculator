@@ -4,7 +4,7 @@
 	export let title = "Input";
 	export let placeholder = "";
 	export let help="";
-	let text = "";
+	export let text = "";
 	const dispatch = createEventDispatcher();
 
 	function validate(){
