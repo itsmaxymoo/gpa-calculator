@@ -5,6 +5,12 @@
 
 	export let valid = false;
 	export let reqGPA = 0;
+
+	export let cumulativeGPA;
+	export let cumulativeCredits;
+
+	export let currentCredits;
+	export let currentGPA;
 </script>
 
 <h2 class="has-text-weight-normal">Results:</h2>
@@ -32,7 +38,22 @@
 				this.
 			</a>
 		</p>
-		<p class="help">
+
+		{#if currentCredits > 0.0000001}
+			<p class="pt-6">
+				From (only) the {currentCredits} credits you manually added,
+				your term-GPA is <span class="is-underlined">{currentGPA.toFixed(2)}</span>, which
+				brings your cumulative GPA from {cumulativeGPA} to
+				{
+					(
+						parseFloat(cumulativeGPA) * (parseFloat(cumulativeCredits) / (parseFloat(currentCredits) + parseFloat(cumulativeCredits)))
+						+ parseFloat(currentGPA) * (parseFloat(currentCredits) / (parseFloat(currentCredits) + parseFloat(cumulativeCredits)))
+					).toFixed(2)
+				}.
+			</p>
+		{/if}
+
+		<p class="help pt-6">
 			DISCLAIMER: Double-check the estimated letter grade; slights inaccuracies may
 			occur at edge values due to floating point rounding errors.
 		</p>

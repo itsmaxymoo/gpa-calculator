@@ -18,6 +18,9 @@
 	let neededGPA = 0;
 	let calculationValid = false;
 
+	let totalCurrentCredits;
+	let totalCurrentGPA;
+
 	function onValidInput(){
 		if((existingCredits.length * existingGPA.length * currentCredits.length * desiredGPA.length) > 0){
 			neededGPA = calcNeededGPA(
@@ -63,13 +66,15 @@
 
 				<hr />
 				
-				<ClassGrades/>
+				<ClassGrades bind:totalCredits={totalCurrentCredits} bind:totalGPA={totalCurrentGPA}/>
 			</div>
 			<div class="column is-2">
 				<UiMainArrow/>
 			</div>
 			<div class="column is-5">
-				<ResultsPane bind:valid={calculationValid} bind:reqGPA={neededGPA} />
+				<ResultsPane bind:valid={calculationValid} bind:reqGPA={neededGPA}
+					bind:currentCredits={totalCurrentCredits} bind:currentGPA={totalCurrentGPA}
+					bind:cumulativeGPA={existingGPA} bind:cumulativeCredits={existingCredits} />
 			</div>
 		</div>
 	</Section>

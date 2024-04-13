@@ -1,9 +1,29 @@
 <script>
+    import { letterGradeToGPA } from "./calc";
+
+	export let totalCredits = 0;
+	export let totalGPA = 0;
 	let count = 0;
 	let grades = [];
 	let addGrade = "A";
 	let addCredits = "3";
 	let valid = true;
+
+	function calcTotals(){
+		let creditSum = 0;
+
+		grades.forEach(grade => {
+			creditSum += parseFloat(grade.credits);
+		});
+
+		let gpaSum = 0;
+		grades.forEach(grade => {
+			gpaSum += (grade.credits / creditSum * letterGradeToGPA(grade.grade));
+		});
+
+		totalCredits = creditSum;
+		totalGPA = gpaSum;
+	}
 
 	function add(){
 		let credNum = parseFloat(addCredits);
@@ -20,6 +40,8 @@
 
 		addGrade = "A";
 		addCredits = "3";
+
+		calcTotals();
 	}
 
 	function del(id){
@@ -37,6 +59,8 @@
 
 		grades.splice(index, 1);
 		grades = grades;
+
+		calcTotals();
 	}
 </script>
 
@@ -53,6 +77,7 @@
 				<option>A</option>
 				<option>A-</option>
 				<option>B+</option>
+				<option>B</option>
 				<option>B-</option>
 				<option>C+</option>
 				<option>C</option>
@@ -79,6 +104,7 @@
 							<option>A</option>
 							<option>A-</option>
 							<option>B+</option>
+							<option>B</option>
 							<option>B-</option>
 							<option>C+</option>
 							<option>C</option>
@@ -88,7 +114,7 @@
 					</span>
 				</p>
 				<p class="control">
-					<input class="input {!valid ? "is-danger" : ""}" size=4 bind:value={grade.credits}/>
+					<input class="input" size=4 bind:value={grade.credits}/>
 				</p>
 				<p class="control">
 					<button class="button is-danger" on:click={() => {del(grade.id)}}>
