@@ -100,7 +100,7 @@
 			<div class="field has-addons">
 				<p class="control">
 					<span class="select">
-						<select bind:value={grade.grade}>
+						<select bind:value={grade.grade} on:change={() => {calcTotals()}}>
 							<option>A</option>
 							<option>A-</option>
 							<option>B+</option>
@@ -114,7 +114,7 @@
 					</span>
 				</p>
 				<p class="control">
-					<input class="input" size=4 bind:value={grade.credits}/>
+					<input class="input" size=4 bind:value={grade.credits} on:input={() => {calcTotals()}}/>
 				</p>
 				<p class="control">
 					<button class="button is-danger" on:click={() => {del(grade.id)}}>
